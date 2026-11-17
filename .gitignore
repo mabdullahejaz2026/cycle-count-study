@@ -1,0 +1,30 @@
+# OS / editor
+.DS_Store
+Icon?
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+
+# Data and heavy artifacts never live in the repo (Drive only)
+data/raw/
+data/cache/
+*.wav
+*.npy
+*.pt
+*.ckpt
+
+# Credentials
+kaggle.json
+*.token
+
+# Google Drive sync noise
+*.gdoc
+*.gsheet
+.tmp.driveupload/
+.tmp.drivedownload/
