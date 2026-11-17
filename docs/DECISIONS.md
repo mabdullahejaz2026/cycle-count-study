@@ -40,3 +40,10 @@ subscription tied to the Colab account).
 background processes with log files + DONE sentinels on Drive, polled by small cells.**
 Reason: the MCP `run_code_cell` tool is synchronous and the browser connection is
 fragile (verified); blocking on a long cell would lose the session.
+
+**2026-11-17 · HF_Lung link discrepancy: PROMPT.md points to `HF_Lung_V1_IP` (the
+39-subject Incremental Package, 7z archives) but describes HF_Lung_V1 (9,765 × 15 s
+recordings, 34,095/18,349 phase labels).**
+Action: kept the IP download untouched and additionally cloned
+`gitlab.com/techsupportHF/HF_Lung_V1` (the dataset actually described). To be
+confirmed by the user at GATE 0; detector training (Phase 6) will use V1.
