@@ -27,3 +27,16 @@ Reason: Colab ships its own CUDA-matched torch build; pinning an exact torch ver
 would force a reinstall mismatched to the VM's CUDA driver. Exact versions recorded per
 run in results rows via config_hash + commit.
 Rejected: exact torch pin (fragile across Colab image updates).
+
+**2026-11-17 · Repo made public (user decision) so Colab can clone without credentials.**
+Reason: the Colab VM mounts a different Google account's Drive, so the repo cannot
+flow via Drive; the user preferred public visibility over managing a PAT in Colab
+Secrets. Consequence: paper drafts and prereg text will be publicly visible —
+revisit before Phase 4 (prereg) if needed.
+Rejected: fine-grained PAT in Colab Secrets (more setup); account switch (Pro+
+subscription tied to the Colab account).
+
+**2026-11-17 · All Colab work goes through notebook cells; long jobs run as
+background processes with log files + DONE sentinels on Drive, polled by small cells.**
+Reason: the MCP `run_code_cell` tool is synchronous and the browser connection is
+fragile (verified); blocking on a long cell would lose the session.
